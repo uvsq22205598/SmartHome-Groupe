@@ -160,16 +160,16 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Lumières"
+                            android:text="Alarme"
                             android:textColor="#757575"
                             android:textSize="12sp"
                             android:layout_marginTop="8dp"/>
                         <TextView
-                            android:id="@+id/main_lights_on"
+                            android:id="@+id/main_alarm_status"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="3"
-                            android:textColor="#000000"
+                            android:text="..."
+                            android:textColor="#4CAF50"
                             android:textStyle="bold"
                             android:textSize="16sp"/>
                     </LinearLayout>
@@ -214,14 +214,14 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/card_led"
+                    android:id="@+id/card_salon_light"
                     android:layout_width="0dp"
                     android:layout_height="120dp"
                     android:layout_columnWeight="1"
                     android:layout_margin="8dp"
                     app:cardBackgroundColor="#1E1E1E"
                     app:cardCornerRadius="15dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lumières" android:textColor="#FFFFFF" android:layout_gravity="center"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Éclairage" android:textColor="#FFFFFF" android:layout_gravity="center"/>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView

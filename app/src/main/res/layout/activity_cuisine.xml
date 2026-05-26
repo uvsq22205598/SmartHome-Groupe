@@ -167,5 +167,42 @@
             android:textStyle="bold"
             android:visibility="gone"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seuil température"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="25dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/edit_seuil_temp"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:inputType="numberDecimal"
+                android:text="30"
+                android:textColor="#FFFFFF"
+                android:background="#1E1E1E"
+                android:padding="12dp"
+                android:textSize="16sp"/>
+
+            <Button
+                android:id="@+id/btn_set_seuil"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="Appliquer"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="#2979FF"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

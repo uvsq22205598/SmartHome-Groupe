@@ -17,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SecurityActivity extends AppCompatActivity {
 
-    private DatabaseReference entreeRef, cmdOuvrir, cmdFermer, cmdDesactiver;
+    private DatabaseReference entreeRef, cmdOuvrir, cmdDesactiver;
 
     private TextView txtPorte, txtPresence, txtDistance, txtAlarme, txtTentatives, txtEvenement;
     private CardView cardAlarme;
@@ -40,7 +40,6 @@ public class SecurityActivity extends AppCompatActivity {
         FirebaseDatabase db = FirebaseDatabase.getInstance();
         entreeRef = db.getReference("maison/entree");
         cmdOuvrir = db.getReference("maison/commandes/entree/ouvrir_porte");
-        cmdFermer = db.getReference("maison/commandes/entree/fermer_porte");
         cmdDesactiver = db.getReference("maison/commandes/entree/desactiver_alarme");
 
         entreeRef.addValueEventListener(new ValueEventListener() {
@@ -105,11 +104,6 @@ public class SecurityActivity extends AppCompatActivity {
         findViewById(R.id.btn_ouvrir_porte).setOnClickListener(v -> {
             cmdOuvrir.setValue(true);
             Toast.makeText(this, "Commande : ouvrir porte", Toast.LENGTH_SHORT).show();
-        });
-
-        findViewById(R.id.btn_fermer_porte).setOnClickListener(v -> {
-            cmdFermer.setValue(true);
-            Toast.makeText(this, "Commande : fermer porte", Toast.LENGTH_SHORT).show();
         });
 
         findViewById(R.id.btn_desactiver_alarme).setOnClickListener(v -> {

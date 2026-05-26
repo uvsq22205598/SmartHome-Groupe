@@ -19,8 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class EntreeActivity extends AppCompatActivity {
 
-    private DatabaseReference mDatabase, cmdOuvrir, cmdFermer, cmdDesactiver;
-    private boolean isDoorOpen = false;
+    private DatabaseReference mDatabase, cmdOuvrir, cmdDesactiver;
 
     private TextView txtPorte, txtPresence, txtDistance, txtTentatives, txtCodeStatut, txtCodeSaisi;
     private ImageView imgSecurityStatus, btnRetour;
@@ -36,8 +35,6 @@ public class EntreeActivity extends AppCompatActivity {
 
         cmdOuvrir = FirebaseDatabase.getInstance()
                 .getReference("maison/commandes/entree/ouvrir_porte");
-        cmdFermer = FirebaseDatabase.getInstance()
-                .getReference("maison/commandes/entree/fermer_porte");
         cmdDesactiver = FirebaseDatabase.getInstance()
                 .getReference("maison/commandes/entree/desactiver_alarme");
 
@@ -116,17 +113,8 @@ public class EntreeActivity extends AppCompatActivity {
                         // PORTE
                         String porteTxt = snapshot.child("porte").getValue(String.class);
                         if (porteTxt != null) {
-                            isDoorOpen = porteTxt.equalsIgnoreCase("ouverte");
-                        }
-
-                        if (isDoorOpen) {
-                            txtPorte.setText("Porte Ouverte");
-                            txtPorte.setTextColor(Color.parseColor("#03DAC5"));
-                            btnPorte.setText("FERMER LA PORTE");
-                        } else {
-                            txtPorte.setText("Porte Fermée");
-                            txtPorte.setTextColor(Color.RED);
-                            btnPorte.setText("OUVRIR LA PORTE");
+                            txtPorte.setText(porteTxt.equalsIgnoreCase("ouverte") ? "Porte Ouverte" : "Porte Fermée");
+                            txtPorte.setTextColor(porteTxt.equalsIgnoreCase("ouverte") ? Color.parseColor("#03DAC5") : Color.RED);
                         }
                     }
                 } catch (Exception e) {
@@ -138,13 +126,8 @@ public class EntreeActivity extends AppCompatActivity {
         });
 
         btnPorte.setOnClickListener(v -> {
-            if (isDoorOpen) {
-                cmdFermer.setValue(true);
-                Toast.makeText(this, "Commande : Fermer la porte", Toast.LENGTH_SHORT).show();
-            } else {
-                cmdOuvrir.setValue(true);
-                Toast.makeText(this, "Commande : Ouvrir la porte", Toast.LENGTH_SHORT).show();
-            }
+            cmdOuvrir.setValue(true);
+            Toast.makeText(this, "Commande : Ouvrir la porte", Toast.LENGTH_SHORT).show();
         });
 
         btnReset.setOnClickListener(v -> {

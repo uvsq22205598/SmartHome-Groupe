@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +26,8 @@ public class CuisineActivity extends AppCompatActivity {
     private TextView txtTemp, txtHumidite, txtStatus, txtMsgAlerte;
     private CardView cardStatus;
     private ImageView imgAlerte, btnRetour;
-    private Button btnAcquitter;
+    private Button btnAcquitter, btnSetSeuil;
+    private EditText editSeuil;
 
     private boolean alerteAcquittee = false;
     private double ancienneTemp = 0.0;
@@ -54,6 +56,8 @@ public class CuisineActivity extends AppCompatActivity {
         imgAlerte = findViewById(R.id.img_cuisine_alerte);
         btnAcquitter = findViewById(R.id.btn_acquitter_alerte);
         btnRetour = findViewById(R.id.btn_cuisine_retour);
+        editSeuil = findViewById(R.id.edit_seuil_temp);
+        btnSetSeuil = findViewById(R.id.btn_set_seuil);
 
         // --- CLIC SUR LE BOUTON RETOUR ---
         btnRetour.setOnClickListener(v -> {
@@ -164,6 +168,16 @@ public class CuisineActivity extends AppCompatActivity {
             btnAcquitter.setVisibility(View.GONE);
 
             Toast.makeText(this, "Signal d'arrêt envoyé au système", Toast.LENGTH_SHORT).show();
+        });
+
+        // Modifier le seuil de température
+        btnSetSeuil.setOnClickListener(v -> {
+            String val = editSeuil.getText().toString().trim();
+            if (!val.isEmpty()) {
+                double seuil = Double.parseDouble(val);
+                mDatabaseCommandes.child("seuil_temperature").setValue(seuil);
+                Toast.makeText(this, "Seuil température modifié : " + seuil + "°C", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }
