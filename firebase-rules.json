@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "maison": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}

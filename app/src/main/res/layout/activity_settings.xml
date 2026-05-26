@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+    <LinearLayout
+        android:id="@+id/header_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paramètres"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Personnalisation du profil"
+            android:textColor="#88FFFFFF"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header_settings"
+        android:orientation="vertical"
+        android:padding="25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Changer votre prénom :"
+            android:textColor="#BB86FC"
+            android:textSize="14sp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/edit_change_name"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/edittext_dark_bg"
+            android:hint="Entrez votre nouveau prénom"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#55FFFFFF"
+            android:padding="15dp"
+            android:inputType="textPersonName"
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/btn_save_settings"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="25dp"
+            android:text="Enregistrer les modifications"
+            android:backgroundTint="#9C27B0"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Note : Votre prénom sera mis à jour sur l'écran d'accueil dès l'enregistrement."
+            android:textColor="#55FFFFFF"
+            android:textSize="12sp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_navigation_settings"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:background="#1E1E1E"
+        android:orientation="horizontal"
+        android:elevation="10dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/btn_nav_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="?android:attr/selectableItemBackground">
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@android:drawable/ic_menu_myplaces"
+                app:tint="#88FFFFFF" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accueil"
+                android:textColor="#88FFFFFF"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_nav_rooms"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="?android:attr/selectableItemBackground">
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@android:drawable/ic_menu_sort_by_size"
+                app:tint="#88FFFFFF" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pièces"
+                android:textColor="#88FFFFFF"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_nav_settings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="?android:attr/selectableItemBackground">
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@android:drawable/ic_menu_preferences"
+                app:tint="#9C27B0" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textColor="#9C27B0"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

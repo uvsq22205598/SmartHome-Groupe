@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:id="@+id/btn_security_retour"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@android:drawable/ic_menu_revert"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                app:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sécurité"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginStart="15dp" />
+        </LinearLayout>
+
+        <!-- Statut porte -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            app:cardBackgroundColor="#1E1E1E"
+            app:cardCornerRadius="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🚪 Porte"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/txt_security_porte"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Présence -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            app:cardBackgroundColor="#1E1E1E"
+            app:cardCornerRadius="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="👤 Présence"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/txt_security_presence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Distance -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            app:cardBackgroundColor="#1E1E1E"
+            app:cardCornerRadius="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="📏 Distance"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/txt_security_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Alarme intrusion -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_alarme"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            app:cardBackgroundColor="#1E1E1E"
+            app:cardCornerRadius="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🚨 Alarme intrusion"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/txt_security_alarme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Tentatives -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            app:cardBackgroundColor="#1E1E1E"
+            app:cardCornerRadius="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="15dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="❌ Tentatives ratées"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/txt_security_tentatives"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Dernier événement -->
+        <TextView
+            android:id="@+id/txt_security_evenement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#88FFFFFF"
+            android:textSize="13sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp" />
+
+        <!-- Séparateur -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#33FFFFFF"
+            android:layout_marginBottom="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Actions"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="15dp" />
+
+        <Button
+            android:id="@+id/btn_ouvrir_porte"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="10dp"
+            android:text="Ouvrir la porte"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2979FF"
+            app:cornerRadius="12dp" />
+
+        <Button
+            android:id="@+id/btn_fermer_porte"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="10dp"
+            android:text="Fermer la porte"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFAB40"
+            app:cornerRadius="12dp" />
+
+        <Button
+            android:id="@+id/btn_desactiver_alarme"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="10dp"
+            android:text="Désactiver l'alarme"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#E53935"
+            app:cornerRadius="12dp" />
+
+    </LinearLayout>
+</ScrollView>

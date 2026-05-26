@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:padding="20dp">
+
+    <ImageButton
+        android:id="@+id/btn_back_temp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/abc_ic_ab_back_material"
+        app:tint="#FFFFFF"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/text_bienvenue_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_back_temp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Bienvenue !"
+        android:textColor="#BB86FC"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_temp"
+            app:tint="#FF5252"
+            android:background="#1AFF5252"
+            android:padding="25dp" />
+
+        <TextView
+            android:id="@+id/text_temp_valeur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="-- °C"
+            android:textColor="#FFFFFF"
+            android:textSize="64sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Température Cuisine"
+            android:textColor="#88FFFFFF"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/text_temp_alerte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#FFAB40"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/text_temp_evenement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="#88FFFFFF"
+            android:textSize="13sp"
+            android:layout_marginTop="2dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

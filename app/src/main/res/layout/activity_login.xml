@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#121212"> <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Smart Home"
+    android:textSize="32sp"
+    android:textStyle="bold"
+    android:textColor="#FFFFFF"
+    android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connectez-vous pour gérer votre maison"
+        android:textSize="16sp"
+        android:textColor="#A0A0A0"
+        android:layout_marginBottom="40dp" />
+
+    <EditText
+        android:id="@+id/edit_email_login"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Adresse e-mail"
+        android:inputType="textEmailAddress"
+        android:padding="16dp"
+        android:background="#1E1E1E"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#707070"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/edit_password_login"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Mot de passe"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:background="#1E1E1E"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#707070"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="SE CONNECTER"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#00a8ff"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/txt_go_to_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pas encore de compte ? Inscrivez-vous"
+        android:textSize="14sp"
+        android:textColor="#00a8ff"
+        android:padding="8dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+</LinearLayout>
