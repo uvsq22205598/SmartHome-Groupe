@@ -23,6 +23,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         // Initialisation Firebase
         mAuth = FirebaseAuth.getInstance();
+        nameField = findViewById(R.id.edit_name_signup);
         emailField = findViewById(R.id.edit_email_signup);
         passField = findViewById(R.id.edit_password_signup);
         confirmPassField = findViewById(R.id.edit_confirm_password);
@@ -31,12 +32,15 @@ public class SignUpActivity extends AppCompatActivity {
 
         // bouton S'inscrire
         registerBtn.setOnClickListener(v -> {
+            String prenom = nameField.getText().toString().trim();
             String email = emailField.getText().toString().trim();
             String pass = passField.getText().toString().trim();
             String confirmPass = confirmPassField.getText().toString().trim();
 
-            // On définit le prénom
-            String prenom = "Yanis";
+            if (prenom.isEmpty()) {
+                Toast.makeText(this, "Entre ton prénom !", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             if (email.isEmpty() || pass.isEmpty()) {
                 Toast.makeText(this, "Remplis tous les champs !", Toast.LENGTH_SHORT).show();

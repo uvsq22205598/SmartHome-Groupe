@@ -36,9 +36,21 @@
                 android:padding="24dp">
 
                 <EditText
+                    android:id="@+id/edit_name_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:hint="Prénom"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#88FFFFFF"
+                    android:padding="15dp"
+                    android:inputType="textPersonName"
+                    android:background="@drawable/edittext_dark_bg"/>
+
+                <EditText
                     android:id="@+id/edit_email_signup"
                     android:layout_width="match_parent"
                     android:layout_height="55dp"
+                    android:layout_marginTop="15dp"
                     android:hint="Email"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#88FFFFFF"

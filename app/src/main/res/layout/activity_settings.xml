@@ -76,6 +76,17 @@
             android:textColor="#55FFFFFF"
             android:textSize="12sp"
             android:gravity="center"/>
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="30dp"
+            android:text="Se déconnecter"
+            android:backgroundTint="#E53935"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"/>
     </LinearLayout>
 
     <LinearLayout

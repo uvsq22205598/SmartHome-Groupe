@@ -14,7 +14,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 public class SettingsActivity extends AppCompatActivity {
 
     private EditText editNewName;
-    private Button btnSave;
+    private Button btnSave, btnLogout;
     private FirebaseAuth mAuth;
 
     @Override
@@ -27,6 +27,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         editNewName = findViewById(R.id.edit_change_name);
         btnSave = findViewById(R.id.btn_save_settings);
+        btnLogout = findViewById(R.id.btn_logout);
 
         // 1. Afficher le nom actuel dans le champ de saisie
         if (user != null && user.getDisplayName() != null) {
@@ -74,5 +75,14 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         // Déjà sur Settings, on ne fait rien
+
+        // Bouton Déconnexion
+        btnLogout.setOnClickListener(v -> {
+            mAuth.signOut();
+            Intent intent = new Intent(SettingsActivity.this, SignUpActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+        });
     }
 }
