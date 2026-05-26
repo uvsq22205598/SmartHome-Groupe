@@ -79,12 +79,12 @@ public class MainActivity extends AppCompatActivity {
 
         CardView cardTemp = findViewById(R.id.card_temp);
         CardView cardHumid = findViewById(R.id.card_humid);
-        CardView cardSalonLight = findViewById(R.id.card_salon_light);
+        CardView cardCuisine = findViewById(R.id.card_cuisine);
         CardView cardSecurity = findViewById(R.id.card_security);
 
         cardTemp.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, TempActivity.class)));
         cardHumid.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, HumidActivity.class)));
-        cardSalonLight.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, SalonActivity.class)));
+        cardCuisine.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, CuisineActivity.class)));
         cardSecurity.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, SecurityActivity.class)));
 
         LinearLayout btnHome = findViewById(R.id.btn_nav_home);
