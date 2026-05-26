@@ -146,28 +146,33 @@ public class CuisineActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {}
         });
 
-        // --- ACTION : ARRÊTER L'ALARME (CORRIGÉ POUR ÉCRIRE SUR LES BONS CLÉS) ---
+        // --- ACTION : ARRÊTER L'ALARME AVEC NOUVEAU SEUIL AUTO ---
         btnAcquitter.setOnClickListener(v -> {
-            // 1. Activation de l'état acquitté local
             alerteAcquittee = true;
 
-            // 2. Écriture de la commande de réinitialisation sous "commandes -> cuisine -> reset_alerte"
-            mDatabaseCommandes.child("reset_alerte").setValue(true);
+            // Lire la température actuelle pour calculer le nouveau seuil
+            mDatabaseCuisine.child("temperature").get().addOnCompleteListener(task -> {
+                double tempActuelle = 0;
+                if (task.isSuccessful() && task.getResult().getValue() != null) {
+                    tempActuelle = Double.parseDouble(task.getResult().getValue().toString());
+                }
+                double nouveauSeuil = tempActuelle + 5.0;
+                mDatabaseCommandes.child("seuil_temperature").setValue(nouveauSeuil);
+                editSeuil.setText(String.valueOf(nouveauSeuil));
+            });
 
-            // 3. Désactivation des variables d'alertes et buzzer sous "cuisine"
+            mDatabaseCommandes.child("reset_alerte").setValue(true);
             mDatabaseCuisine.child("alerte").setValue(false);
             mDatabaseCuisine.child("alerte_active").setValue(false);
-            mDatabaseCuisine.child("alerte_intrusion").setValue(false);
             mDatabaseCuisine.child("buzzer").setValue(false);
 
-            // 4. Changement immédiat de l'interface graphique pour enlever le bloc rouge
             cardStatus.setCardBackgroundColor(Color.parseColor("#1E1E1E"));
             txtStatus.setText("SÉCURISÉ");
             imgAlerte.setVisibility(View.GONE);
-            txtMsgAlerte.setText("Alarme arrêtée. Signal de reset envoyé.");
+            txtMsgAlerte.setText("Alarme stoppée. Nouveau seuil : température + 5°C");
             btnAcquitter.setVisibility(View.GONE);
 
-            Toast.makeText(this, "Signal d'arrêt envoyé au système", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Alarme désactivée, seuil automatiquement augmenté", Toast.LENGTH_SHORT).show();
         });
 
         // Modifier le seuil de température

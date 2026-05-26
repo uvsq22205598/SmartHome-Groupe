@@ -160,4 +160,30 @@
             android:layout_marginStart="5dp"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/btn_color_yellow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Jaune"
+            android:backgroundTint="#d4a017"
+            android:layout_marginEnd="5dp"/>
+
+        <Button
+            android:id="@+id/btn_color_white"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Blanc"
+            android:backgroundTint="#888888"
+            android:layout_marginStart="5dp"/>
+    </LinearLayout>
+
 </LinearLayout>

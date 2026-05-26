@@ -69,10 +69,14 @@ public class SalonActivity extends AppCompatActivity {
                         }
 
                         if (colorName != null) {
-                            if (colorName.equals("rouge")) imgLedCircle.setColorFilter(Color.RED);
-                            else if (colorName.equals("bleu")) imgLedCircle.setColorFilter(Color.BLUE);
-                            else if (colorName.equals("vert")) imgLedCircle.setColorFilter(Color.GREEN);
-                            else imgLedCircle.setColorFilter(Color.WHITE);
+                            switch (colorName) {
+                                case "rouge": imgLedCircle.setColorFilter(Color.RED); break;
+                                case "bleu": imgLedCircle.setColorFilter(Color.BLUE); break;
+                                case "vert": imgLedCircle.setColorFilter(Color.GREEN); break;
+                                case "jaune": imgLedCircle.setColorFilter(Color.YELLOW); break;
+                                case "blanc": imgLedCircle.setColorFilter(Color.WHITE); break;
+                                default: imgLedCircle.setColorFilter(Color.WHITE);
+                            }
                         }
                     }
                 } catch (Exception e) {
@@ -86,8 +90,14 @@ public class SalonActivity extends AppCompatActivity {
         btnToggle.setOnClickListener(v -> {
             if (isLightOn) {
                 cmdEteindre.setValue(true);
+                isLightOn = false;
+                txtStatus.setText("Éteinte");
+                btnToggle.setText("ALLUMER");
             } else {
                 cmdAllumer.setValue(true);
+                isLightOn = true;
+                txtStatus.setText("Allumée");
+                btnToggle.setText("ÉTEINDRE");
             }
         });
 
@@ -96,5 +106,7 @@ public class SalonActivity extends AppCompatActivity {
         findViewById(R.id.btn_color_blue).setOnClickListener(v -> cmdCouleur.setValue("bleu"));
         findViewById(R.id.btn_color_red).setOnClickListener(v -> cmdCouleur.setValue("rouge"));
         findViewById(R.id.btn_color_green).setOnClickListener(v -> cmdCouleur.setValue("vert"));
+        findViewById(R.id.btn_color_yellow).setOnClickListener(v -> cmdCouleur.setValue("jaune"));
+        findViewById(R.id.btn_color_white).setOnClickListener(v -> cmdCouleur.setValue("blanc"));
     }
 }
