@@ -37,7 +37,6 @@ public class CuisineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuisine);
 
-        // --- CHEMINS FIREBASE COMPATIBLES AVEC TES CAPTURES ---
         mDatabaseCuisine = FirebaseDatabase.getInstance().getReference()
                 .child("maison")
                 .child("cuisine");
@@ -47,7 +46,6 @@ public class CuisineActivity extends AppCompatActivity {
                 .child("commandes")
                 .child("cuisine");
 
-        // --- LIAISON INTERFACE UTILISATEUR (UI) ---
         txtTemp = findViewById(R.id.txt_cuisine_temp);
         txtHumidite = findViewById(R.id.txt_cuisine_humidity);
         txtStatus = findViewById(R.id.txt_cuisine_status);
@@ -59,12 +57,10 @@ public class CuisineActivity extends AppCompatActivity {
         editSeuil = findViewById(R.id.edit_seuil_temp);
         btnSetSeuil = findViewById(R.id.btn_set_seuil);
 
-        // --- CLIC SUR LE BOUTON RETOUR ---
         btnRetour.setOnClickListener(v -> {
             finish();
         });
 
-        // --- ÉCOUTEUR FIREBASE (TEMPS RÉEL) ---
         mDatabaseCuisine.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -83,7 +79,6 @@ public class CuisineActivity extends AppCompatActivity {
                             }
                         }
 
-                        // Vérification de l'état de l'alarme selon tes variables Firebase
                         Boolean alerteActive = snapshot.child("alerte_active").getValue(Boolean.class);
                         if (alerteActive == null) {
                             alerteActive = snapshot.child("alerte").getValue(Boolean.class);
@@ -106,7 +101,6 @@ public class CuisineActivity extends AppCompatActivity {
                         }
                         ancienneTemp = currentTemp;
 
-                        // --- LOGIQUE DE DÉTECTION DU DANGER VIA LE VRAI SEUIL ---
                         boolean isDanger = (currentTemp > seuilTemp) || (alerteActive != null && alerteActive);
 
                         if (isDanger && !alerteAcquittee) {
@@ -146,7 +140,6 @@ public class CuisineActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {}
         });
 
-        // --- ACTION : ARRÊTER L'ALARME AVEC NOUVEAU SEUIL AUTO ---
         btnAcquitter.setOnClickListener(v -> {
             alerteAcquittee = true;
 

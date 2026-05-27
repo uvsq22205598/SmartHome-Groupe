@@ -14,9 +14,8 @@ public class PiecesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pieces);
 
-        // 1. Initialisation des cartes (CardViews) d'après ton XML
         CardView cardSalon = findViewById(R.id.card_salon);
-        CardView cardHall = findViewById(R.id.card_hall); // C'était card_hall dans ton XML !
+        CardView cardHall = findViewById(R.id.card_hall);
         CardView cardCuisine = findViewById(R.id.card_cuisine);
 
         // Redirection au clic sur les cartes des pièces
@@ -33,7 +32,7 @@ public class PiecesActivity extends AppCompatActivity {
         });
 
 
-        // 2. Gestion de ta barre de navigation personnalisée (LinearLayouts)
+        // Barre de navigation basse
         LinearLayout btnNavHome = findViewById(R.id.btn_nav_home);
         LinearLayout btnNavRooms = findViewById(R.id.btn_nav_rooms);
         LinearLayout btnNavSettings = findViewById(R.id.btn_nav_settings);
@@ -52,7 +51,6 @@ public class PiecesActivity extends AppCompatActivity {
             finish();
         });
 
-        // Sur le bouton Pièces, on ne fait rien car on y est déjà
         btnNavRooms.setOnClickListener(v -> {
             // Déjà sur cette page
         });

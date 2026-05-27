@@ -61,7 +61,7 @@ public class SignUpActivity extends AppCompatActivity {
             mAuth.createUserWithEmailAndPassword(email, pass)
                     .addOnCompleteListener(this, task -> {
                         if (task.isSuccessful()) {
-                            // Si c reussi on enregistre le prénom dans le profil
+                            // Enregistrement du prénom dans le profil Firebase
                             FirebaseUser user = mAuth.getCurrentUser();
                             if (user != null) {
                                 UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
@@ -77,14 +77,14 @@ public class SignUpActivity extends AppCompatActivity {
                                 });
                             }
                         } else {
-                            // Si ya echec : On affiche l'erreur
+                            // Affichage de l'erreur
                             String error = task.getException().getMessage();
                             Toast.makeText(SignUpActivity.this, "Erreur : " + error, Toast.LENGTH_LONG).show();
                         }
                     });
         });
 
-        //  aller vers la page de Connexion
+        // Lien vers la page de connexion
         goToLogin.setOnClickListener(v -> {
             Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
             startActivity(intent);

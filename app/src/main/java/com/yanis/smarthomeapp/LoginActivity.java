@@ -36,7 +36,6 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
 
-            // 🛑 Bloque le bouton pour éviter les clics multiples qui font bugger Firebase
             loginBtn.setEnabled(false);
 
             mAuth.signInWithEmailAndPassword(email, pass)
@@ -44,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Toast.makeText(LoginActivity.this, "Connexion réussie !", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                            finish(); // Détruit le Login pour ne pas pouvoir y revenir avec le bouton retour du téléphone
+                            finish();
                         } else {
                             loginBtn.setEnabled(true); // Réactive le bouton en cas d'échec
                             Toast.makeText(this, "Erreur : " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
